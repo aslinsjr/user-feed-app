@@ -1,0 +1,15 @@
+:root {
+    --primary-blue: rgba(0, 0, 255, 0.5);
+    --primary-white: hsla(240, 100%, 100%, 0.8);
+    --secondary-blue: hsla(240, 76%, 29%, 0.7);
+    --secondary-grey: hsl(240, 8%, 55%);
+    --primary-borders: hsla(240, 100%, 50%, 0.2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    user-select: none;
+}
