@@ -8,7 +8,7 @@ Essa é uma solução do desafio proposto por [ Saurabh Mhatre: ](https://smhatr
 
 ### Links
 
-- Solução URL: [Repository](https://github.com/aslinsjr/clicker-app)
+- Solução URL: [Repository](https://github.com/aslinsjr/user-feed-app)
 - Live Site URL: [Live Page](https://clicker-app-zeta.vercel.app/)
 
 ### Desenvolvido com
