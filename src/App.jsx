@@ -1,5 +1,4 @@
 import { useState, useEffect} from 'react'
-import axios from "axios";
 
 import UsersComponent from './components/UsersComponent';
 import ShowUserComponent from './components/ShowUserComponent';
@@ -12,16 +11,20 @@ function App() {
   const [user, setUser] = useState("")
 
   useEffect(() => {
-    axios
-      .get("https://randomuser.me/api/?results=50")
-      .then(response => {
-        const data = response.data.results;
-        setData(data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    getData()
   }, [])
+
+  async function getData() {
+    const response = await fetch("https://randomuser.me/api/?results=50")
+    try {
+      const data = await response.json()
+
+      setData(data.results)
+
+    }catch (error) {
+      console.log(error)
+    }
+  }
 
 
   const handleClick = (item) => {
