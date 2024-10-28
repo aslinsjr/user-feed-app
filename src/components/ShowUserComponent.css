@@ -21,9 +21,9 @@
     width: 100%;
     text-align: center;
     background-color: var(--primary-blue);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     color: var(--primary-white);
-    padding: 0.2rem 0;
+    padding: 0.5rem 0;
 }
 
 .informations-container {

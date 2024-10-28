@@ -4,6 +4,7 @@
     --secondary-blue: hsla(240, 76%, 29%, 0.7);
     --secondary-grey: hsl(240, 8%, 55%);
     --primary-borders: hsla(240, 100%, 50%, 0.2);
+    --background-color: hsla(240, 46%, 95%, 0.5);
 }
 
 *{

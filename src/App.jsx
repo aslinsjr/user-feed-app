@@ -2,12 +2,14 @@ import { useState, useEffect} from 'react'
 
 import UsersComponent from './components/UsersComponent';
 import ShowUserComponent from './components/ShowUserComponent';
+import SearchComponent from './components/SearchComponent';
 
 import './App.css'
 
 function App() {
   
   const [data, setData] = useState([])
+  const [searchData, setSearchData] = useState([])
   const [user, setUser] = useState("")
 
   useEffect(() => {
@@ -21,14 +23,28 @@ function App() {
 
       setData(data.results)
 
+      setSearchData(data.results)
+
     }catch (error) {
       console.log(error)
     }
   }
 
-
-  const handleClick = (item) => {
+  function handleMouseOver(item) {
     setUser(item)
+  }
+
+  function handleSearch(e) {
+    if(e.target.value !== "") {
+      setSearchData(data.filter((item) => item.name.first.toLowerCase().includes(e.target.value)))
+    } else {
+      setSearchData(data)
+    }
+    
+  }
+
+  function handleClean() {
+    setSearchData(data)
   }
 
   
@@ -40,8 +56,9 @@ function App() {
       </div>
       <div className='dashboard-container'>
         <div className='feed-container'>
-          {data.map((item, index) => (
-            <UsersComponent key={index} item={item} handleClick={handleClick}/>
+          <SearchComponent handleClean={handleClean} handleSearch={handleSearch} />
+          {searchData.map((item, index) => (
+            <UsersComponent key={index} item={item} handleMouseOver={handleMouseOver}/>
            ))}
         </div>
         <ShowUserComponent user={user}/>
